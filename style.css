@@ -1,0 +1,271 @@
+
+/* charity: water brand colors */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 22px 12px;
+  font-family: Avenir, Arial, sans-serif;
+  background: #e8f4ff;
+  color: #172b4d;
+}
+
+.container {
+  max-width: 720px;
+  margin: 15px auto;
+  padding: clamp(18px, 5vw, 38px);
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 12px 35px rgba(0, 58, 108, .12);
+}
+
+.brand {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 9px;
+  font-size: 20px;
+  color: #172b4d;
+  font-weight: 500;
+}
+
+.brand-symbol {
+  background: #FFC907;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+}
+
+h1 {
+  text-align: center;
+  margin: 16px 0 7px;
+  font-size: clamp(30px, 6vw, 44px);
+  color: #0866ac;
+}
+
+.game-instructions {
+  text-align: center;
+  line-height: 1.5;
+  margin: 0 0 22px;
+}
+
+.stats {
+  display: flex;
+  justify-content: space-around;
+  gap: 14px;
+  background: #edf7ff;
+  border: 2px solid #cae7fb;
+  padding: 12px;
+  border-radius: 12px;
+}
+
+.stats p {
+  margin: 0;
+  text-align: center;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.stats p > span {
+  display: block;
+  font-size: 29px;
+  color: #0866ac;
+  margin-top: 4px;
+}
+
+.achievement {
+  text-align: center;
+  min-height: 27px;
+  margin: 20px 0 14px;
+  font-weight: bold;
+  color: #075e99;
+}
+
+.game-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(7px, 2vw, 14px);
+  max-width: 450px;
+  margin: 0 auto;
+}
+
+.grid-cell {
+  aspect-ratio: 1;
+  border-radius: 13px;
+  border: 2px solid #b5d9ef;
+  background: #f1f9ff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.game-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 78%;
+  height: 78%;
+  border: 0;
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
+  animation: popUp .18s ease-out;
+}
+
+.game-item:focus-visible {
+  outline: 3px solid #0866ac;
+  border-radius: 10px;
+}
+
+/* Yellow jerry can drawn with CSS */
+.water-can {
+  width: 64%;
+  height: 72%;
+  background: #FFC907;
+  border: 3px solid #e0a900;
+  border-radius: 9px;
+  position: relative;
+  box-shadow: inset -7px -5px 0 rgba(150, 105, 0, .12);
+}
+
+.water-can::before {
+  content: '';
+  position: absolute;
+  top: -17%;
+  left: 17%;
+  width: 46%;
+  height: 16%;
+  border: 5px solid #e0a900;
+  border-bottom: 0;
+  border-radius: 6px 6px 0 0;
+}
+
+.water-can::after {
+  content: '💧';
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  font-size: clamp(16px, 4vw, 31px);
+}
+
+.dirty-drop {
+  font-size: clamp(28px, 7vw, 62px);
+  filter: grayscale(1);
+}
+
+@keyframes popUp {
+  from {
+    transform: scale(.3);
+    opacity: .3;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.controls {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 23px;
+}
+
+button#start-game,
+button#reset-game {
+  padding: 13px 22px;
+  border: 0;
+  border-radius: 9px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+#start-game {
+  background: #FFC907;
+  color: #172b4d;
+}
+
+#start-game:disabled {
+  opacity: .55;
+  cursor: not-allowed;
+}
+
+#reset-game {
+  background: #2E9DF7;
+  color: white;
+}
+
+.legend {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+  font-size: 13px;
+  margin: 19px 0 0;
+}
+
+.mission {
+  margin: 20px 0 0;
+  font-size: 13px;
+  text-align: center;
+  color: #546779;
+}
+
+.mission a {
+  color: #0866ac;
+}
+
+/* Extra credit: confetti animation */
+.confetti-layer {
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  z-index: 5;
+}
+
+.confetti-piece {
+  position: absolute;
+  top: -20px;
+  width: 11px;
+  height: 17px;
+  animation: confettiFall 2.6s linear forwards;
+}
+
+@keyframes confettiFall {
+  to {
+    transform: translateY(110vh) rotate(650deg);
+    opacity: 0;
+  }
+}
+
+/* Responsive design for phones */
+@media (max-width: 420px) {
+  .container {
+    padding: 18px 12px;
+  }
+
+  .stats p {
+    font-size: 13px;
+  }
+
+  .water-can::before {
+    border-width: 3px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .game-item,
+  .confetti-piece {
+    animation: none;
+  }
+}

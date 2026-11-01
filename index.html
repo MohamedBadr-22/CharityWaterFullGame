@@ -1,0 +1,63 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Water Quest | charity: water</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="container">
+    <header class="brand">
+      <span class="brand-symbol" aria-hidden="true">💧</span>
+      <span>charity: <strong>water</strong></span>
+    </header>
+
+    <h1>Water Quest</h1>
+
+    <p class="game-instructions">
+      Collect at least <strong>20 yellow jerry cans</strong>
+      in 30 seconds! Avoid dirty water.
+    </p>
+
+    <section class="stats" aria-label="Game statistics">
+      <p>Cans Collected <span id="current-cans">0</span></p>
+      <p>Time Left <span><span id="timer">30</span>s</span></p>
+    </section>
+
+    <p id="achievements" class="achievement"
+       role="status" aria-live="polite">
+      Press Start Game to begin!
+    </p>
+
+    <div class="game-grid"
+         aria-label="Water Quest 3 by 3 game board"></div>
+
+    <div class="controls">
+      <button id="start-game" type="button">Start Game</button>
+      <button id="reset-game" type="button" class="reset-btn">
+        Reset Game
+      </button>
+    </div>
+
+    <p class="legend">
+      <span>🟨 Clean water: +1 point</span>
+      <span>💦 Dirty water: −2 points</span>
+    </p>
+
+    <p class="mission">
+      Every drop counts. Learn more at
+      <a href="https://www.charitywater.org/"
+         target="_blank" rel="noopener noreferrer">
+        charity: water
+      </a>.
+    </p>
+  </main>
+
+  <div id="confetti" class="confetti-layer" aria-hidden="true"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
