@@ -167,7 +167,6 @@ function checkMilestones() {
       reachedMilestones.push(milestone.percent);
 
       messageDisplay.textContent = milestone.message;
-      playSound("milestone");
     }
   }
 }
