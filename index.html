@@ -7,57 +7,133 @@
   <title>Water Quest | charity: water</title>
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
   <main class="container">
+
     <header class="brand">
-      <span class="brand-symbol" aria-hidden="true">💧</span>
+      <span class="brand-symbol">💧</span>
       <span>charity: <strong>water</strong></span>
     </header>
 
     <h1>Water Quest</h1>
 
     <p class="game-instructions">
-      Collect at least <strong>20 yellow jerry cans</strong>
-      in 30 seconds! Avoid dirty water.
+      Collect yellow water cans before time runs out!
+      Avoid dirty water and help spread awareness
+      about the importance of clean water.
     </p>
 
-    <section class="stats" aria-label="Game statistics">
-      <p>Cans Collected <span id="current-cans">0</span></p>
-      <p>Time Left <span><span id="timer">30</span>s</span></p>
+    <!-- Difficulty selection -->
+    <div class="difficulty-section">
+      <label for="difficulty">Choose Difficulty:</label>
+
+      <select id="difficulty">
+        <option value="easy">Easy</option>
+        <option value="normal" selected>Normal</option>
+        <option value="hard">Hard</option>
+      </select>
+
+      <p id="difficulty-info">
+        Collect 20 cans in 30 seconds!
+      </p>
+    </div>
+
+    <!-- Game statistics -->
+    <section class="stats">
+      <p>
+        Cans Collected
+        <span id="current-cans">0</span>
+      </p>
+
+      <p>
+        Time Left
+        <span><span id="timer">30</span>s</span>
+      </p>
+
+      <p>
+        Goal
+        <span id="goal">20</span>
+      </p>
     </section>
 
+    <!-- Progress bar -->
+    <div class="progress-container">
+      <div id="progress-bar"></div>
+    </div>
+
+    <!-- Feedback messages -->
     <p id="achievements" class="achievement"
        role="status" aria-live="polite">
       Press Start Game to begin!
     </p>
 
-    <div class="game-grid"
-         aria-label="Water Quest 3 by 3 game board"></div>
+    <!-- Game board -->
+    <div class="game-grid"></div>
 
+    <!-- Game controls -->
     <div class="controls">
-      <button id="start-game" type="button">Start Game</button>
-      <button id="reset-game" type="button" class="reset-btn">
-        Reset Game
-      </button>
+      <button id="start-game">Start Game</button>
+      <button id="reset-game">Reset Game</button>
     </div>
 
-    <p class="legend">
-      <span>🟨 Clean water: +1 point</span>
-      <span>💦 Dirty water: −2 points</span>
-    </p>
+    <!-- Sound settings -->
+    <div class="sound-settings">
+      <label>
+        <input type="checkbox" id="sound-toggle" checked>
+        Sound Effects
+      </label>
+    </div>
 
-    <p class="mission">
-      Every drop counts. Learn more at
+    <!-- Game instructions -->
+    <div class="legend">
+      <p>🟨 Yellow Water Can: +1 Point</p>
+      <p>💧 Dirty Water: -2 Points</p>
+    </div>
+
+    <!-- charity: water mission -->
+    <section class="mission">
+      <h2>Why Clean Water Matters</h2>
+
+      <p>
+        Millions of people around the world still lack
+        access to clean drinking water. charity: water
+        works to bring clean and safe water to communities
+        in need.
+      </p>
+
+      <p>
+        Water Quest is inspired by this mission.
+        Every drop counts!
+      </p>
+    </section>
+
+    <!-- Footer and donation links -->
+    <footer>
+      <p>Learn more about charity: water</p>
+
       <a href="https://www.charitywater.org/"
          target="_blank" rel="noopener noreferrer">
-        charity: water
-      </a>.
-    </p>
+        Official Website
+      </a>
+
+      <a href="https://www.charitywater.org/donate"
+         target="_blank" rel="noopener noreferrer">
+        Donate
+      </a>
+
+      <p class="footer-note">
+        Water Quest | Educational Game Project
+      </p>
+    </footer>
+
   </main>
 
-  <div id="confetti" class="confetti-layer" aria-hidden="true"></div>
+  <!-- Confetti container -->
+  <div id="confetti" class="confetti-layer"></div>
 
   <script src="script.js"></script>
 </body>
 </html>
+
 
